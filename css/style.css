@@ -1,0 +1,23 @@
+
+body {
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+#gallery {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.gallery-item {
+    list-style: none;
+
+}
+
+
+.img-gallery {
+    display: block;
+    height: auto;
+    width: 450px;
+}
