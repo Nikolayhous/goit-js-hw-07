@@ -34,4 +34,4 @@ const createGallery = ({ url, alt }) =>
     acc + createGallery(image),   '',);  
     galleryEl.insertAdjacentHTML('beforeend', showGallery);
 
-console.log(galleryEl);
+console.log(galleryEl);                     
