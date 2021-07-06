@@ -1,25 +1,30 @@
 
 
 const validInput = document.getElementById('validation-input');
+const inputLength = validInput.dataset.length;
+
 validInput.addEventListener('blur', getValidInputBlur);
 
 
+  function getValidInputBlur (event) {
 
-  function getValidInputBlur () {
+    const targetValue = event.currentTarget.value;
 
-    if (validInput.getAttribute('data-length') > validInput.value.length) {
-        validInput.classList.remove('valid');
-        validInput.classList.add('invalid');
-    } else {
+    if (targetValue.length == inputLength) {
         validInput.classList.remove('invalid');
         validInput.classList.add('valid');
+    } else if 
+        (targetValue.length === 0) {
+            validInput.classList.remove('invalid');
+            validInput.classList.remove('valid');
+    }
+    else {
+        validInput.classList.remove('valid');
+        validInput.classList.add('invalid');
     }
     console.log(validInput.value.length);
 };
 
-// function onInputBlur () {
-// console.log('Инпут потерял фокус')
-// };
 
 
  
