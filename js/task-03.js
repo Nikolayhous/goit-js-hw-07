@@ -13,25 +13,53 @@ const images = [
   },
 ];
 
-// const itemImgEl = images.map((img) => {
-//   const itemEl = document.createElement('li');
-//   const imagesEl = document.createElement('img');
-//   imagesEl.classList.add('gallery__img');
-//   imagesEl.src = img.url;
-//   imagesEl.alt = img.alt;
-//   itemEl.append(imagesEl);
-//   const imagesArr = document.querySelector('#gallery');
-//   imagesArr.append(itemEl);
-//   console.log(imagesArr);
-// });
 
-const galleryEl = document.querySelector('#gallery');  
-const createGallery = ({ url, alt }) =>   
-`<li class =  gallery-item >
-  <img class = img-gallery src="${url}" alt = "${alt}">
-    </li>`;  
-    const showGallery = images.reduce((acc, image) => 
-    acc + createGallery(image),   '',);  
-    galleryEl.insertAdjacentHTML('beforeend', showGallery);
+const ul = document.querySelector('#gallery');
 
-console.log(galleryEl);                     
+const createElement = (acc,{url, alt}) => acc + `<li> 
+<img src="${url}" alt="${alt}" width="350">
+</li>`;
+
+const murkUp = images.reduce(createElement, '');
+
+ul.insertAdjacentHTML("beforeend", murkUp)
+
+console.log(murkUp)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// const galleryEl = document.querySelector('#gallery');  
+// const createGallery = ({ url, alt }) =>   
+// `<li class =  gallery-item >
+//   <img class = img-gallery src="${url}" alt = "${alt}">
+//     </li>`;  
+//     const showGallery = images.reduce((acc, image) => 
+//     acc + createGallery(image),   '',);  
+//     galleryEl.insertAdjacentHTML('beforeend', showGallery);
+
+// console.log(galleryEl);                     

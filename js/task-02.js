@@ -8,34 +8,31 @@ const ingredients = [
 ];
 
 
-const element = ingredients.map(ingredient => {  
-  const ingredientsItemEl = document.createElement('li');
-  ingredientsItemEl.classList.add('ingredients__item');
-  ingredientsItemEl.append(ingredient);
-  // console.log(ingredientsItemEl);
- return ingredientsItemEl;
-});
+const ulEl = document.querySelector('#gallery');
+const imageList = images.reduce(
+  (acc, image) =>
+    acc + `<li><img src='${image.url} alt='${image.alt} width='150px'></li>`, ''
+);
+
+ulEl.insertAdjacentHTML('afterbegin', imageList);
+console.log(ulEl);
 
 
-const ingredientsListEl = document.querySelector('#ingredients');
-console.log(ingredientsListEl);
+// const element = ingredients.map(ingredient => {  
+//   const ingredientsItemEl = document.createElement('li');
+//   ingredientsItemEl.classList.add('ingredients__item');
+//   ingredientsItemEl.append(ingredient);
+//   // console.log(ingredientsItemEl);
+//  return ingredientsItemEl;
+// });
 
-ingredientsListEl.append(...element);
-
-// const itemElIngredients = (option) => {
-//   return option.map(ingredient => {  
-//     const ingredientsItemEl = document.createElement('li');
-//     ingredientsItemEl.classList.add('ingredients__item');
-//     ingredientsItemEl.append(ingredient);
-//     // console.log(ingredientsItemEl);
-//    return ingredientsItemEl;
-//   });
-// }; 
 
 // const ingredientsListEl = document.querySelector('#ingredients');
 // console.log(ingredientsListEl);
 
-// ingredientsListEl.append(...itemElIngredients);
+// ingredientsListEl.append(...element);
+
+
 
 
 
