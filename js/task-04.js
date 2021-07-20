@@ -6,8 +6,9 @@ const [buttonDec, value, buttonInc] = document.querySelector(
   
   
   const increment = () => (value.textContent = +value.textContent + 1);
-  
+  // const increment = () => (value.textContent++);
   const decriment = () => (value.textContent -= 1);
+  // const decriment = () => (value.textContent--);
   
   
   buttonInc.addEventListener("click", increment);
